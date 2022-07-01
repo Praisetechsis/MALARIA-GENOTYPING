@@ -79,3 +79,68 @@ fastp \
     --html "fastp_reads/${SAMPLE}_fastp.html" 
 done
 
+cd Peru
+mkdir fastp_reads  
+samples=(
+    "ERR6226018_Illumina_MiSeq_paired_end_sequencing"
+    "ERR6226019_Illumina_MiSeq_paired_end_sequencing"
+    "ERR6226020_Illumina_MiSeq_paired_end_sequencing"
+    "ERR6226021_Illumina_MiSeq_paired_end_sequencing"
+    "ERR6226023_Illumina_MiSeq_paired_end_sequencing"
+    )
+
+for SAMPLE in ${samples[@]}
+ do
+
+fastp \
+    -i "$PWD/${SAMPLE}_1.fastq.gz" \
+    -I "$PWD/${SAMPLE}_2.fastq.gz" \
+    -o "fastp_reads/${SAMPLE}_1.fastq.gz" \
+    -O "fastp_reads/${SAMPLE}_2.fastq.gz" \
+    --html "fastp_reads/${SAMPLE}_fastp.html" 
+done
+
+cd Cambodia
+mkdir fastp_reads  
+
+samples=(
+    "ERR2172115_Illumina_HiSeq_2000_paired_end_sequencing"
+    "ERR2172116_Illumina_HiSeq_2000_paired_end_sequencing"
+    "ERR2172117_Illumina_HiSeq_2000_paired_end_sequencing"
+    "ERR2172118_Illumina_HiSeq_2000_paired_end_sequencing"
+    "ERR2172119_Illumina_HiSeq_2000_paired_end_sequencing"
+)
+
+for SAMPLE in ${samples[@]}
+ do
+
+fastp \
+    -i "$PWD/${SAMPLE}_1.fastq.gz" \
+    -I "$PWD/${SAMPLE}_2.fastq.gz" \
+    -o "fastp_reads/${SAMPLE}_1.fastq.gz" \
+    -O "fastp_reads/${SAMPLE}_2.fastq.gz" \
+    --html "fastp_reads/${SAMPLE}_fastp.html" 
+done
+
+cd Myanmar
+mkdir fastp_reads  
+samples=(
+    "SRR5346206_Other_Sequencing_of_malaria_parasite_P._falciparum"
+    "SRR5346207_Other_Sequencing_of_malaria_parasite_P._falciparum"
+    "SRR5346208_Other_Sequencing_of_malaria_parasite_P._falciparum"
+    "SRR5346209_Other_Sequencing_of_malaria_parasite_P._falciparum"
+    "SRR5346210_Other_Sequencing_of_malaria_parasite_P._falciparum"
+)
+
+for SAMPLE in ${samples[@]}
+ do
+
+fastp \
+    -i "$PWD/${SAMPLE}_1.fastq.gz" \
+    -I "$PWD/${SAMPLE}_2.fastq.gz" \
+    -o "fastp_reads/${SAMPLE}_1.fastq.gz" \
+    -O "fastp_reads/${SAMPLE}_2.fastq.gz" \
+    --html "fastp_reads/${SAMPLE}_fastp.html" 
+done
+
+
