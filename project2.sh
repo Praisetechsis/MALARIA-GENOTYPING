@@ -143,4 +143,76 @@ fastp \
     --html "fastp_reads/${SAMPLE}_fastp.html" 
 done
 
+#GENOME ASSEMBLY WITH SPADES.PY
+    
+    #CONGO
+cd Congo
+mkdir Congoassemble
+cd fastp_reads
+ 
+samples=(
+    "SRR13013579_Illumina_HS4000_of_P._falciparum_after_sWGA_DRC_dried_blood_spot"
+    "SRR13013580_Illumina_HS4000_of_P._falciparum_after_sWGA_DRC_dried_blood_spot"
+    "SRR13013581_Illumina_HS4000_of_P._falciparum_after_sWGA_DRC_dried_blood_spot"
+    "SRR13013582_Illumina_HS4000_of_P._falciparum_after_sWGA_DRC_dried_blood_spot"
+    "SRR13013585_Illumina_HS4000_of_P._falciparum_after_sWGA_DRC_dried_blood_spot"
+)
+
+for sample in ${samples[@]}
+ do
+    spades.py -1 "$PWD/$sample"_1.fastq.gz -2 "$PWD/$sample"_2.fastq.gz -o /home/einstein/project2/Praise/raw_data/Congo/Congoassemble
+ done
+
+      #PERU
+cd .. && cd Peru
+mkdir Peru_assembly
+cd fastp_reads
+ 
+samples=(
+    "ERR6226018_Illumina_MiSeq_paired_end_sequencing"
+    "ERR6226019_Illumina_MiSeq_paired_end_sequencing"
+    "ERR6226020_Illumina_MiSeq_paired_end_sequencing"
+    "ERR6226021_Illumina_MiSeq_paired_end_sequencing"
+    "ERR6226023_Illumina_MiSeq_paired_end_sequencing"
+)
+for sample in ${samples[@]}
+ do
+    spades.py -1 "$PWD/$sample"_1.fastq.gz -2 "$PWD/$sample"_2.fastq.gz -o /home/einstein/project2/Praise/raw_data/Peru/Peru_assembly/$sample
+ done
+
+     #CAMBODIA
+cd .. && cd Cambodia
+mkdir Cambodia_assembly
+cd fastp_reads
+ 
+samples=(
+    "ERR2172115_Illumina_HiSeq_2000_paired_end_sequencing"
+    "ERR2172116_Illumina_HiSeq_2000_paired_end_sequencing"
+    "ERR2172117_Illumina_HiSeq_2000_paired_end_sequencing"
+    "ERR2172118_Illumina_HiSeq_2000_paired_end_sequencing"
+    "ERR2172119_Illumina_HiSeq_2000_paired_end_sequencing"
+)
+
+for sample in ${samples[@]}
+ do
+    spades.py -1 "$PWD/$sample"_1.fastq.gz -2 "$PWD/$sample"_2.fastq.gz -o /home/einstein/project2/Praise/raw_data/Cambodia/Cambodia_assembly/$sample
+ done
+ 
+      #MYANMAR
+cd .. && cd Myanmar
+mkdir myanmar_assemble
+cd fastp_reads
+
+ samples=(
+    "SRR5346206_Other_Sequencing_of_malaria_parasite_P._falciparum"
+    "SRR5346207_Other_Sequencing_of_malaria_parasite_P._falciparum"
+    "SRR5346208_Other_Sequencing_of_malaria_parasite_P._falciparum"
+    "SRR5346209_Other_Sequencing_of_malaria_parasite_P._falciparum"
+    "SRR5346210_Other_Sequencing_of_malaria_parasite_P._falciparum"
+)
+
+for sample in ${samples[@]}
+ do
+     spades.py -1 "$PWD/$sample"_1.fastq.gz -2 "$PWD/$sample"_2.fastq.gz -o /home/einstein/project2/Praise/raw_data/Myanmar/myanmar_assemble/$sample
+ done
 
